@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Sandbox</title>
+    <script src="./node_modules/htmx.org/dist/htmx.min.js"></script>
+    <!-- OR <script src="https://unpkg.com/htmx.org@2.0.1"></script> -->
+</head>
+
+<body>
+    <!-- GET example send to server and display current time -->
+    <button hx-get="/api/time" hx-target="#time">Get Time</button>
+    <div id="time"></div>
+
+    <!-- POST example send to server and display response -->
+    <form hx-post="/api/data" hx-target="#dataOutput">
+        <input type="text" name="message" placeholder="enter message">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="dataOutput"></div>
+</body>
+
+</html>
